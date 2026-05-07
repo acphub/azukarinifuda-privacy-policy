@@ -128,7 +128,7 @@
   <table>
     <tr><th>アプリ名</th><td>預かり荷札</td></tr>
     <tr><th>提供者</th><td>株式会社ACP<br>〒101-0025 東京都千代田区神田佐久間町1-26 秋葉原村井ビル6階</td></tr>
-    <tr><th>対象プラットフォーム</th><td>Android 8.0 以上</td></tr>
+    <tr><th>対象プラットフォーム</th><td>Android 7.0 以上</td></tr>
     <tr>
       <th>用途</th>
       <td>ホテルクローク業務における BLE タグを使った荷物の預かり・返却・探索管理（スタッフ専用業務アプリ）</td>
@@ -251,6 +251,11 @@
     BLE は荷物管理タグとの通信のみに利用します。
     <code>BLUETOOTH_SCAN</code> 権限には <code>neverForLocation</code> フラグを設定しており、
     利用者の位置情報の取得には使用しません。
+  </p>
+  <p>
+    Android 11 以下では OS の制約により BLE スキャンに位置情報権限（<code>ACCESS_FINE_LOCATION</code>）の宣言が必要です。
+    ただし、本アプリは位置情報の取得・記録・外部送信を一切行いません。
+    本権限は Android 12 以上の端末では要求されません（<code>maxSdkVersion="30"</code> で制限済み）。
   </p>
 
   <!-- ===== 8. 操作ログ ===== -->
